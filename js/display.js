@@ -24,8 +24,8 @@ function renderProductHtml(product) {
             </div>
             <div class="price">
                 <p>
-                    <span class="afterSale">${product.afterSale}đ</span>
-                    <span class="beforSale">${product.beforSale}đ</span>
+                    <span class="afterSale">${Number(product.afterSale).toLocaleString('vi')}đ</span>
+                    <span class="beforSale">${Number(product.beforSale).toLocaleString('vi')}đ</span>
                 </p>
             </div>
             <div class="button">
@@ -65,8 +65,8 @@ function renderProductInstockHtml(product) {
             </div>
             <div class="price">
                 <p>
-                    <span class="afterSale">${product.afterSale}đ</span>
-                    <span class="beforSale">${product.beforSale}đ</span>
+                    <span class="afterSale">${Number(product.afterSale).toLocaleString('vi')}đ</span>
+                    <span class="beforSale">${Number(product.beforSale).toLocaleString('vi')}đ</span>
                 </p>
             </div>
             <div class="button">
@@ -123,11 +123,11 @@ function displayOnPopUp(product) {
                 </div>
                 <div class="item">
                     <label for="afterSale">Giá bán</label>
-                    <input type="number" id="afterSale" name="afterSale" value="${product.afterSale}">
+                    <input type="number" id="afterSale" name="afterSale" value="${Number(product.afterSale).toLocaleString('vi')}">
                 </div>
                 <div class="item">
                     <label for="beforSale">Giá gốc</label>
-                    <input type="number" id="beforSale" name="beforSale" value="${product.beforSale}">
+                    <input type="number" id="beforSale" name="beforSale" value="${Number(product.beforSale).toLocaleString('vi')}">
                 </div>
                 <div class="item">
                     <label for="imgProduct">Hình ảnh sản phẩm</label>
@@ -163,7 +163,7 @@ function renderCartsHtml(carts) {
         var cartHtml = renderCartHtml(carts[i]);
         cartsHtml = cartHtml + cartsHtml;
     }
-    totalAmountsHtml();
+    cartsHtml = cartsHtml+ totalAmountsHtml();
     return cartsHtml;
 }
 // Tạo HTML Product Card - Hiển thị trong cart
@@ -181,14 +181,14 @@ function renderCartHtml(cart) {
             </div>
             <div class="detailInfor"><span>${product.nameProduct}</span></div>
             <div class="detailInfor">
-                <span class="afterSale">${product.afterSale}đ</span>
-                <span class="beforSale">${product.beforSale}đ</span>
+                <span class="afterSale">${Number(product.afterSale).toLocaleString('vi')}đ</span>
+                <span class="beforSale">${Number(product.beforSale).toLocaleString('vi')}đ</span>
             </div>
             <div class="detailInfor">
                 <input type="number" min="1" id="quantityProduct" onchange="changeQuantityInCart('${cart.idProduct}',this.value)" value="${cart.quantityProduct}">
             </div>
             <div class="detailInfor">
-                <span>${totalAmount}đ</span>
+                <span>${Number(totalAmount).toLocaleString('vi')}đ</span>
             </div>
             <div class="detailInfor">
                 <i class="fas fa-trash" onclick="onClickDeleteInCarts('${cart.idProduct}')"></i>
@@ -199,25 +199,19 @@ function renderCartHtml(cart) {
 }
 
 function totalAmountsHtml(){
-    var totalAmounts= totalAmountInCarts();
+    var totalAmounts = Number(totalAmountInCarts()).toLocaleString('vi');
     var totalAmountsHtml=
-    `
-    <div class="cart">
+    `<div class="cart">
+        <div class="detailInfor"></div>
+        <div class="detailInfor"></div>
+        <div class="detailInfor"></div>
         <div class="detailInfor">
-            </div>
-            <div class="detailInfor"></div>
-            <div class="detailInfor">
-            </div>
-            <div class="detailInfor">
-            </div>
-            <div class="detailInfor">
-                <span>đ</span>
-            </div>
-            <div class="detailInfor">
-                <i class="fas fa-trash" onclick="onClickDeleteInCarts('')"></i>
-            </div>
-            </div>
+            <h1>Tổng</h1>
         </div>
-    `;
+        <div class="detailInfor">
+            <h1>${totalAmounts}đ</h1>
+        </div>
+        <div class="detailInfor"></div>
+        </div>`;
     return totalAmountsHtml;
     }
