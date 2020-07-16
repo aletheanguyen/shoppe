@@ -20,15 +20,16 @@ function onClickSaveProduct(idProduct) {
     var beforSale = nodeBeforSale.value;
     var imgProduct = nodeImgProduct.value;
     var products = getProductsFromStorage();
-
+    
     if (isValidProductForm(nameProduct, afterSale, beforSale, imgProduct) == true) {
         var newProduct = createProduct(nameProduct, afterSale, beforSale, imgProduct, idProduct);
-        if (idProduct == null || idProduct == '') {
-            var idProduct = uuidv4();
+        console.log(newProduct);
+        if (newProduct.idProduct == null || newProduct.idProduct == '') {
+            newProduct.idProduct = uuidv4();
             products.push(newProduct);
         }
         else {
-            products = editProduct(products, newProduct);
+             products = editProduct(products, newProduct);
         }
         setProductsToStorage(products);
         displayOffPopUp();

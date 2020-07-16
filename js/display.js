@@ -123,11 +123,11 @@ function displayOnPopUp(product) {
                 </div>
                 <div class="item">
                     <label for="afterSale">Giá bán</label>
-                    <input type="number" id="afterSale" name="afterSale" value="${Number(product.afterSale).toLocaleString('vi')}">
+                    <input type="number" id="afterSale" name="afterSale" value="${product.afterSale}">
                 </div>
                 <div class="item">
                     <label for="beforSale">Giá gốc</label>
-                    <input type="number" id="beforSale" name="beforSale" value="${Number(product.beforSale).toLocaleString('vi')}">
+                    <input type="number" id="beforSale" name="beforSale" value="${product.beforSale}">
                 </div>
                 <div class="item">
                     <label for="imgProduct">Hình ảnh sản phẩm</label>
