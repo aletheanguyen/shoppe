@@ -1,3 +1,13 @@
+// Storage giả lập
+function fakeProductInLocalStore(){
+    var products = [];
+    for(var i=0; i<10; i++){
+        var product = createProduct(`Sản phẩm ${i}`,3000000,5000000,'https://assets.swappie.com/iPhone-8-Plus-256GB-Gold-1-1.png',uuidv4());
+        products.push(product);
+    }
+    setProductsToStorage(products);
+    return products;
+}
 // Xuất toàn bộ sản phẩm trong Storage 
 function getProductsFromStorage() {
     var products = JSON.parse(localStorage.getItem('products'));

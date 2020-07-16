@@ -85,24 +85,24 @@
                     <div class="form">
                         <div class="customerInfo">
                             <label for="hoTen">Họ tên</label>
-                            <input type="text" class="hoTen" name="hoTen">
+                            <input type="text" class="hoTen" name="hoTen" id = "nameCustomer">
                         </div>
                         <div class="customerInfo">
                             <label for="phonenumber">Số điện thoại</label>
-                            <input type="number" class="hoTen" name="phonenumber">
+                            <input type="number" class="hoTen" name="phonenumber" id="phoneCustomber">
                         </div>
                         <div class="customerInfo">
                             <label for="email">Email</label>
-                            <input type="email" class="email" name="email">
+                            <input type="email" class="email" name="email" id="emailCustomer">
                         </div>
                         <div class="customerInfo">
                             <label for="birthday">Ngày sinh</label>
-                            <input type="date" class="birthday" name="birthday">
+                            <input type="date" class="birthday" name="birthday" id="birthdayCustomer">
                         </div>
                         <div class="customerInfo">
                             <label for="recieveDateNote">Thời gian nhận hàng trong ngày 8-18h
                             </label>
-                            <input type="number" class="recieveDateNote" name="birthday">
+                            <input type="number" min = 8 max = 18 class="recieveDateNote" value = "8" name="recieveday" id="recieveDay">
                         </div>
                         <div class="order">
                             <button class="btn btn-primary" onclick="">Mua hàng</button>
@@ -116,9 +116,14 @@
     <script>
         var nodeCarts = document.getElementById('carts');
         var carts = getProductsFromCarts();
+        var nodeNameCustomer = document.getElementById('nameCustomer');
+        var nodePhoneCustomer = document.getElementById('phoneCustomer');
+        var nodeEmailCustomer = document.getElementById('emailCustomer');
+        var nodeBirthdayCustomer = document.getElementById('birthdayCustomer');
+        var nodeRecieveDay = document.getElementById('recieveDay');
         displayOnCarts(carts);
         var nodeQuantityProduct = document.getElementById('quantityProduct');
-        console.log(nodeQuantityProduct);
+        console.log(nodeBirthdayCustomer);
     </script>
 </body>
 

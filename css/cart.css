@@ -26,14 +26,10 @@
     width: 50%;
 }
 .buyingList .cart input{
-    text-align: center;
-    border: 1px solid #ddd;
     padding: 5px 10px;
-    outline: none;
+    text-align: center;
 }
-.buyingList .cart input:focus{
-    border-color: var(--primary-color);
-}
+
 .buyingList .notification{
     display: flex;
     flex-direction: column;
@@ -66,13 +62,7 @@
 .buyerInformation .container .customerInfo input{
     margin-top: 5px;
     padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 2px;
-    /* ???? */
-    outline: none;
-}
-.buyerInformation .container .customerInfo input:focus{
-    border: 1px solid rgb(44, 84, 157);
 }
 .buyerInformation .container .order button{
     margin-top: 20px;

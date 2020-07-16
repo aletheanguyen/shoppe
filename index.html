@@ -87,7 +87,12 @@
     </footer>
 
     <script>
-        var products = getProductsFromStorage();
+        if (getProductsFromStorage() == null || getProductsFromStorage().length == 0) {
+            var products = fakeProductInLocalStore();
+        }
+        else {
+            var products = getProductsFromStorage();
+        }
         var nodeProducts = document.getElementById('products');
         displayProducts(products);
         var nodeWinNotification = document.getElementById('winNotifyAddToCart');

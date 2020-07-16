@@ -103,7 +103,7 @@ function displayOnPopUp(product) {
                     <div class="item">
                         <label for="imgProduct">Hình ảnh sản phẩm</label>
                         <input type="url" id="imgProduct" name="imgProduct"
-                        value="" placeholder = "Nhập link hình ảnh sản phẩm (Khuyến khích ảnh dạng hình vuông">
+                        value="" placeholder = "Nhập link hình ảnh sản phẩm (Khuyến khích ảnh dạng hình vuông)">
                     </div>
                     <div class="button-item">
                         <button class="btn btn-primary" onclick="onClickSaveProduct('')">Tạo sản phẩm mới</button>

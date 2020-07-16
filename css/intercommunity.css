@@ -26,6 +26,11 @@ h1 {
 
 input {
     width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+}
+input:focus{
+    border-color: var(--primary-color);
 }
 
 img {
@@ -79,7 +84,6 @@ ul {
 .beforSale {
     text-decoration: line-through;
 }
-
 
 footer{
     background-color: black;
