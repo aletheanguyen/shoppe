@@ -37,12 +37,14 @@ function onClickSaveProduct(idProduct) {
     displayStock(products);
 }
 
-// Xóa SP đang chọn
+// Xóa SP đang khỏi LocalStorage
 function onClickDeleteInProducts(idProduct) {
     var products = getProductsFromStorage();
     products = deleteProduct(products, idProduct);
     setProductsToStorage(products);
     displayStock(products);
+    onClickDeleteInCarts(idProduct);
+    
     // sau đó render lại trong kho SP 
 }
 
