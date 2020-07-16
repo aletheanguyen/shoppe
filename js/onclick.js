@@ -22,17 +22,17 @@ function onClickSaveProduct(idProduct) {
     var products = getProductsFromStorage();
 
     if (isValidProductForm(nameProduct, afterSale, beforSale, imgProduct) == true) {
+        var newProduct = createProduct(nameProduct, afterSale, beforSale, imgProduct, idProduct);
         if (idProduct == null || idProduct == '') {
             var idProduct = uuidv4();
-            var newProduct = createProduct(nameProduct, afterSale, beforSale, imgProduct, idProduct);
             products.push(newProduct);
         }
         else {
-            products = editProduct(products, idProduct, nameProduct, afterSale, beforSale, imgProduct);
+            products = editProduct(products, newProduct);
         }
         setProductsToStorage(products);
+        displayOffPopUp();
     }
-    displayOffPopUp();
     displayStock(products);
 }
 

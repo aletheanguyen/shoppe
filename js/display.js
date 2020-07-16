@@ -185,7 +185,7 @@ function renderCartHtml(cart) {
                 <span class="beforSale">${product.beforSale}đ</span>
             </div>
             <div class="detailInfor">
-                <input type="number" min="1" id="quantityProduct" onchange="changeQuantityInCart('${cart.idProduct}')" value="${cart.quantityProduct}">
+                <input type="number" min="1" id="quantityProduct" onchange="changeQuantityInCart('${cart.idProduct}',this.value)" value="${cart.quantityProduct}">
             </div>
             <div class="detailInfor">
                 <span>${totalAmount}đ</span>

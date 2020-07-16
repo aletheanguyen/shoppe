@@ -45,14 +45,13 @@ function findProductfromLocalStorage(idProduct) {
     return product;
 }
 // Sửa sản phẩm có ID(x) trong 1 mảng
-function editProduct(productsArr, idProduct, nameProduct, afterSale, beforSale, imgProduct) {
-    var productsArr = productsArr;
+function editProduct(productsArr, product) {
     for (var i = 0; i < productsArr.length; i++) {
-        if (productsArr[i].idProduct == idProduct) {
-            productsArr[i].nameProduct = nameProduct;
-            productsArr[i].afterSale = afterSale;
-            productsArr[i].beforSale = beforSale;
-            productsArr[i].imgProduct = imgProduct;
+        if (productsArr[i].idProduct == product.idProduct) {
+            productsArr[i].nameProduct = product.nameProduct;
+            productsArr[i].afterSale = product.afterSale;
+            productsArr[i].beforSale = product.beforSale;
+            productsArr[i].imgProduct = product.imgProduct;
         }
     }
     return productsArr;
@@ -80,7 +79,7 @@ function addMoreToCarts(idProduct) {
     }
     return carts;
 }
-function addNewProductToCart(idProduct) {
+function addNewProductToCarts(idProduct) {
     var carts = getProductsFromCarts();
     console.log(carts);
     var cart = createCart(idProduct);
@@ -96,14 +95,13 @@ function createCart(idProduct) {
     return cart;
 }
 // Thay đổi số lượng sản phẩm trong Giỏ hàng
-function changeQuantityInCart(idProduct) {
-    var newCarts = saveNewQuantity(idProduct);
+function changeQuantityInCart(idProduct,newQuantity) {
+    var newCarts = saveNewQuantity(idProduct,newQuantity);
     saveProductToCarts(newCarts);
     displayOnCarts(newCarts);
 }
 // Lưu giá trị số lượng mơi trong Giỏ hàng
-function saveNewQuantity(idProduct) {
-    var newQuantity = nodeQuantityProduct.value;
+function saveNewQuantity(idProduct,newQuantity) {
     var carts = getProductsFromCarts();
     for (var i = 0; i < carts.length; i++) {
         if (carts[i].idProduct == idProduct) {

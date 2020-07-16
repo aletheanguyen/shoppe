@@ -90,12 +90,12 @@ footer{
 
 .win-notification{
     position: fixed;
-    top: 50px;
-    right: calc((100% - 1100px)/2);
+    bottom: 50px;
+    right: 50px;
 }
 .win-notification .content{
-    padding: 20px;
-    background-color: rgba(0, 175, 0, 0.802);
+    padding: 20px 30px;
+    background-color: #00a55d85;
     border-width: 0;
     color: white;
     border-radius: 5px;
