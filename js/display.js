@@ -149,7 +149,7 @@ function displayOnCarts(carts) {
             `<div class="notification">
                         <h1 class="title">Giỏ hàng của bạn đang trống. Quay lại để lựa chọn sản phẩm yêu thích nhé!</h1>
                         <i class="fas fa-store fa-3x"></i>
-                        <a class="btn btn-primary" href="index.html">Quay lại trang chủ</a>
+                        <a class="btn btn-primary" href="/index.html">Quay lại trang chủ</a>
                     </div>`;
     }
     else {
