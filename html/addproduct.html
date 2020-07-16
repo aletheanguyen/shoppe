@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+    <link rel="stylesheet" href="../css/intercommunity.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/addProduct.css">
+    <script src="../js/product.js"></script>
+    <script src="../js/checkValidationForm.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/display.js"></script>
+    <script src="../js/onclick.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="them-sp">
+        <div class="container">
+            <div class="content">
+                <div class="addProduct">
+                    <h1 class="title">DANH SÁCH SẢN PHẨM TRONG KHO</h1>
+                    <button class="btn btn-primary" onclick="onClickEditProduct('')">Thêm sản phẩm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="products">
+        <div class="container">
+            <div class="content" id="products">
+            </div>
+        </div>
+    </div>
+    <div onclick="" class="pop-up" id="popUpEditProduct">
+    </div>
+    
+    <script>
+        var nodeStock = document.getElementById('products');
+        var stock = getProductsFromStorage();
+        var nodePopUp = document.getElementById('popUpEditProduct');
+        displayStock(stock);
+    </script>
+</body>
+
+</html>

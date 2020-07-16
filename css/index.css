@@ -1,0 +1,136 @@
+/* menu */
+
+.nav-bar {
+    width: 100%;
+    background-color: #F7452E;
+    position: fixed;
+}
+
+.nav-bar .container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.nav-bar .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-left-level-1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-level-1 {
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    line-height: 18px;
+}
+
+.menu-left-level-2 {
+    display: none;
+}
+
+.menu-right-level-1 .fas {
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    line-height: 18px;
+}
+
+.menu-level-1:hover, .menu-right-level-1 .fas:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu-left-level-2 {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    position: absolute;
+}
+
+.menu-left-level-2 a {
+    color: black;
+    display: inline-block;
+    padding: 10px 20px;
+    line-height: 18px;
+}
+
+.menu-left-level-2 a:hover {
+    text-decoration: underline;
+}
+
+.menu:hover .menu-left-level-2 {
+    display: block;
+}
+
+main {
+    padding: 20px 0;
+    background-color: #F5F5F5;
+}
+
+/* SHOWCASE */
+
+.showcase {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.showcase .container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.showcase .content {
+    border: 5px solid white;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.showcase .layer1 img {
+    width: 100%;
+}
+
+/* DANH SÁCH SP  */
+
+.products {
+    width: 100%;
+    margin-top: 20px;
+    background-color: ;
+}
+
+.products .container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.products .content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.productCard {
+    /* ??? */
+    flex-basis: calc(25% - 40px);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #ddd;
+    background-color: white;
+}
+
+.productCard img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.productCard .price {
+    margin-bottom: 20px;
+}
+
+.button {
+    text-align: right;
+}
