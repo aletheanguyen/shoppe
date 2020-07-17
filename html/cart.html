@@ -51,7 +51,10 @@
                 </ul>
                 <ul class="menu-right-level-1">
                     <li class="menu">
-                        <a href="cart.html" class="fas fa-cart-arrow-down"></a>
+                        <a href="html/cart.html" class="fas fa-cart-arrow-down menu-level-1"></a>
+                    </li>
+                    <li class="menu">
+                        <a href="/html/addproduct.html" class="menu-level-1 fas fa-box-open"> <span>Kho hàng</span></a>
                     </li>
                 </ul>
                 <!-- Thông báo  -->
@@ -86,14 +89,18 @@
                         <div class="customerInfo">
                             <label for="hoTen">Họ tên</label>
                             <input type="text" class="hoTen" name="hoTen" id = "nameCustomer">
+                            <p id="nameCustomerError" class="error"></p>
                         </div>
                         <div class="customerInfo">
                             <label for="phonenumber">Số điện thoại</label>
-                            <input type="number" class="hoTen" name="phonenumber" id="phoneCustomber">
+                            <input type="number" class="hoTen" name="phonenumber" id="phoneCustomer">
+                            <p id="phoneCustomerError"></p>
                         </div>
                         <div class="customerInfo">
                             <label for="email">Email</label>
                             <input type="email" class="email" name="email" id="emailCustomer">
+                            <p id="emailCustomerError"></p>
+
                         </div>
                         <div class="customerInfo">
                             <label for="birthday">Ngày sinh</label>
@@ -102,10 +109,10 @@
                         <div class="customerInfo">
                             <label for="recieveDateNote">Thời gian nhận hàng trong ngày 8-18h
                             </label>
-                            <input type="number" min = 8 max = 18 class="recieveDateNote" value = "8" name="recieveday" id="recieveDay">
+                            <input type="number" min = 8 max = 18 class="recieveDateNote" name="recieveday" id="recieveDay">
                         </div>
                         <div class="order">
-                            <button class="btn btn-primary" onclick="">Mua hàng</button>
+                            <button class="btn btn-primary" onclick="saveOrderToLocalStorage()">Mua hàng</button>
                         </div>
                     </div>
                 </div>
@@ -123,7 +130,9 @@
         var nodeRecieveDay = document.getElementById('recieveDay');
         displayOnCarts(carts);
         var nodeQuantityProduct = document.getElementById('quantityProduct');
-        console.log(nodeBirthdayCustomer);
+        var nodeNameCustomerError = document.getElementById('nameCustomerError');
+        var nodePhoneCustomerError = document.getElementById('phoneCustomerError');
+        var nodeEmailCustomerError = document.getElementById('emailCustomerError');
     </script>
 </body>
 

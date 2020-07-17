@@ -16,10 +16,12 @@ function onClickSaveProduct(idProduct) {
     var nodeBeforSale = document.getElementById('beforSale');
     var nodeImgProduct = document.getElementById('imgProduct');
     var nameProduct = nodeNameProduct.value;
-    var afterSale = nodeAfterSale.value;
-    var beforSale = nodeBeforSale.value;
+    var afterSale = Number(nodeAfterSale.value);
+    var beforSale = Number(nodeBeforSale.value);
     var imgProduct = nodeImgProduct.value;
     var products = getProductsFromStorage();
+    console.log(`gia Ban la: ${afterSale}, giá gốc là: ${beforSale}`);
+
     
     if (isValidProductForm(nameProduct, afterSale, beforSale, imgProduct) == true) {
         var newProduct = createProduct(nameProduct, afterSale, beforSale, imgProduct, idProduct);

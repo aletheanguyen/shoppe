@@ -208,7 +208,7 @@ function totalAmountsHtml(){
         <div class="detailInfor">
             <h1>Tổng</h1>
         </div>
-        <div class="detailInfor">
+        <div class="detailInfor" id = "totalAmounts" >
             <h1>${totalAmounts}đ</h1>
         </div>
         <div class="detailInfor"></div>

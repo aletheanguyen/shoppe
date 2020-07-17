@@ -4,6 +4,8 @@
     width: 100%;
     background-color: #F7452E;
     position: fixed;
+    top: 0;
+    z-index: 100000;
 }
 
 .nav-bar .container {
@@ -17,7 +19,7 @@
     justify-content: space-between;
 }
 
-.menu-left-level-1 {
+.menu-left-level-1, .menu-right-level-1 {
     display: flex;
     flex-direction: row;
 }
@@ -38,6 +40,12 @@
     display: inline-block;
     padding: 10px 20px;
     line-height: 18px;
+}
+.menu-right-level-1 .fa-box-open {
+    background-color: var(--primary-color-hover);
+}
+.fa-box-open:before{
+    margin-right: 5px;
 }
 
 .menu-level-1:hover, .menu-right-level-1 .fas:hover {
@@ -97,7 +105,6 @@ main {
 .products {
     width: 100%;
     margin-top: 20px;
-    background-color: ;
 }
 
 .products .container {

@@ -1,6 +1,6 @@
 .them-sp{
     position: fixed;
-    top:0;
+    top:37.6px;
     width: 100%;
     background-color: white;
 }
@@ -74,3 +74,4 @@
 }
 .pop-up .content .button-item .btn{
     margin: 10px;
+}
