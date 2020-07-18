@@ -114,6 +114,124 @@ footer{
 
 .error{
     color: red;
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: none;
 }
+
+/* menu */
+
+.nav-bar {
+    width: 100%;
+    background-color: #F7452E;
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+}
+
+.nav-bar .container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.nav-bar .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-left-level-1, .menu-right-level-1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-level-1 {
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    line-height: 18px;
+}
+
+.menu-left-level-2 {
+    display: none;
+}
+
+.menu-right-level-1 .fas {
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    line-height: 18px;
+}
+.menu-right-level-1 .fa-box-open {
+    background-color: var(--primary-color-hover);
+}
+.fa-box-open:before{
+    margin-right: 5px;
+}
+
+.menu-level-1:hover, .menu-right-level-1 .fas:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu-left-level-2 {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    position: absolute;
+}
+
+.menu-left-level-2 a {
+    color: black;
+    display: inline-block;
+    padding: 10px 20px;
+    line-height: 18px;
+}
+
+.menu-left-level-2 a:hover {
+    text-decoration: underline;
+}
+
+.menu:hover .menu-left-level-2 {
+    display: block;
+}
+
+/* DANH SÁCH SP  */
+
+.products {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.products .container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.products .content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.productCard {
+    /* ??? */
+    flex-basis: calc(25% - 40px);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #ddd;
+    background-color: white;
+}
+
+.productCard img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.productCard .price {
+    margin-bottom: 20px;
+}
+.button {
+    text-align: right;
+}
+

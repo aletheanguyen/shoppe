@@ -27,9 +27,9 @@ function isValidProductForm(nameProduct, afterSale, beforSale, imgProduct) {
 
 function isPhoneValidation(phonenumber) {
     var isPhonenumber = false;
-    console.log(phonenumber);
+    console.log(phonenumber.length);
     var firstNumberOfPhone = ["09","03","08","02","07","05","84"];
-    if (isStringValidation(phonenumber) == true) {
+    if (isStringValidation(phonenumber) == true && 9< phonenumber.length <12) {
         for (var i = 0; i < firstNumberOfPhone.length; i++) {
             var position = phonenumber.search(new RegExp(firstNumberOfPhone[i]));
             if (position == 0) {
@@ -64,13 +64,16 @@ function isValidOrderForm(nameCustomer, phoneCustomer, emailCustomer) {
         isValid = false;
         nodeNameCustomerError.style.display = 'block';
     }
+    else{nodeNameCustomerError.style.display = 'none'}
     if (isPhoneValidation(phoneCustomer) == false) {
         nodePhoneCustomerError.style.display = 'block';
         isValid = false;
     }
+    else{nodePhoneCustomerError.style.display = 'none'}
     if (isEmailValidation(emailCustomer) == false) {
         nodeEmailCustomerError.style.display = 'block';
         isValid = false;
     }
+    else{nodeEmailCustomerError.style.display = 'block';}
     return isValid;
 }

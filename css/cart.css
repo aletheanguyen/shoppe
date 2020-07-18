@@ -69,6 +69,41 @@
     width: 100%;
 }
 
+/* Popup */
+.popUpOrder .container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top:0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+
+}
+.popUpOrder .content{
+    padding: 50px 30px;
+    min-width: 50%;
+    border: 1px solid #ddd;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popUpOrder .imgCongrate{
+    max-width: 50%;
+}
+.popUpOrder .content p{
+    margin: 30px 0;
+}
+.popUpOrder .content .btn{
+    width: 100%;
+}
+
+
 
 
 

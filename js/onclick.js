@@ -92,6 +92,7 @@ function onClickCreateOrderInLocalStorage(){
     if(isValidOrderForm(nameCustomer, phoneCustomer, emailCustomer) == true){
         var order = createOrder(nameCustomer, phoneCustomer, emailCustomer, birthdayCustomer, recieveDay, totalAmounts);
         saveOrderToLocalStorage(order);
+        displayWinOrder(order);
         localStorage.removeItem('cart');
         renderCartPage();
     }

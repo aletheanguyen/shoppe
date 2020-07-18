@@ -219,7 +219,7 @@ function totalAmountsHtml() {
 
 function displayBuyerInformation() {
     if (getProductsFromCarts().length == 0) {
-        nodeBuyerInformation.innerHTML =``;
+        nodeBuyerInformation.innerHTML = ``;
     }
     else {
         nodeBuyerInformation.innerHTML =
@@ -259,4 +259,32 @@ function displayBuyerInformation() {
     </div>
     </div>`
     }
+}
+
+function displayWinOrder(order) {
+    nodePopUpWinOrder.innerHTML =
+        `<div class="container">
+        <div class="content">
+            <div class="imgCongrate">
+                <img src="../img/chuc mung.gif" alt="">
+            </div>
+            <div class="desc">
+                <h1 class="title">Đặt hàng thành công</h1>
+                <p>
+                    Thông tin đơn hàng:<br>
+                    Người nhận: ${order.nameCustomer}<br>
+                    Số điện thoại người nhận:${order.phoneCustomer}<br>
+                    Tổng giá trị đơn hàng: ${order.totalAmounts}
+                </p>
+                <div class="button-item">
+                    <button class="btn btn-primary" onclick="onClickOffPopUp()">OK</button>
+                </div>
+            </div>
+
+        </div>
+    </div>`;
+}
+
+function onClickOffPopUp(){
+    nodePopUpWinOrder.innerHTML =``;
 }

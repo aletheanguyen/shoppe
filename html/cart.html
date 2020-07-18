@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <link rel="stylesheet" href="../css/cart.css">
-    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="..//css/intercommunity.css">
     <script src="../js/checkValidationForm.js"></script>
     <script src="../js/storage.js"></script>
@@ -57,7 +56,8 @@
                         <a href="../html/cart.html" class="fas fa-cart-arrow-down menu-level-1"></a>
                     </li>
                     <li class="menu">
-                        <a href="../html/addproduct.html" class="menu-level-1 fas fa-box-open"> <span>Kho hàng</span></a>
+                        <a href="../html/addproduct.html" class="menu-level-1 fas fa-box-open"> <span>Kho
+                                hàng</span></a>
                     </li>
                 </ul>
                 <!-- Thông báo  -->
@@ -86,9 +86,12 @@
         <!-- THÔNG TIN KHÁCH HÀNG  -->
         <div class="buyerInformation" id="buyerInformation">
         </div>
+        <div class="popUpOrder" id="popUpWinOrder">
+        </div>
     </main>
 
     <script>
+        var nodePopUpWinOrder = document.getElementById('popUpWinOrder');
         var nodeQuantityProduct = document.getElementById('quantityProduct');
         var nodeBuyerInformation = document.getElementById('buyerInformation');
         var nodeCarts = document.getElementById('carts');
