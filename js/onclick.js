@@ -88,10 +88,7 @@ function onClickCreateOrderInLocalStorage(){
     var nodeRecieveDay = document.getElementById('recieveDay');
     var recieveDay = nodeRecieveDay.value;
     var totalAmounts = totalAmountInCarts();
-    var dateBuy = System.out.println(java.time.LocalDate.now());
-
-    console.log(dateBuy);
-
+    
     if(isValidOrderForm(nameCustomer, phoneCustomer, emailCustomer) == true){
         var order = createOrder(nameCustomer, phoneCustomer, emailCustomer, birthdayCustomer, recieveDay, totalAmounts);
         saveOrderToLocalStorage(order);
