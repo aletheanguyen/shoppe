@@ -37,17 +37,8 @@ function saveProductToCarts(carts) {
 }
 
 // Lưu thông tin đơn hàng
-function saveOrderToLocalStorage() {
-    var nameCustomer = nodeNameCustomer.value;
-    var phoneCustomer = nodePhoneCustomer.value;
-    var emailCustomer = nodeEmailCustomer.value;
-    var birthdayCustomer = nodeBirthdayCustomer.value;
-    var recieveDay = nodeRecieveDay.value;
-    var totalAmounts = totalAmountInCarts();
-    if (isValidOrderForm(nameCustomer,phoneCustomer,emailCustomer,totalAmounts) == true) {
-        var order = createOrder(nameCustomer, phoneCustomer, emailCustomer, birthdayCustomer, recieveDay, totalAmounts);
-        localStorage.setItem('order', JSON.stringify(order));
-    }
+function saveOrderToLocalStorage(order) {
+    localStorage.setItem('order', JSON.stringify(order));
 }
 
 //Tạo Object Order

@@ -95,13 +95,13 @@ function createCart(idProduct) {
     return cart;
 }
 // Thay đổi số lượng sản phẩm trong Giỏ hàng
-function changeQuantityInCart(idProduct,newQuantity) {
-    var newCarts = saveNewQuantity(idProduct,newQuantity);
+function changeQuantityInCart(idProduct, newQuantity) {
+    var newCarts = saveNewQuantity(idProduct, newQuantity);
     saveProductToCarts(newCarts);
-    displayOnCarts(newCarts);
+    renderCartPage();
 }
 // Lưu giá trị số lượng mơi trong Giỏ hàng
-function saveNewQuantity(idProduct,newQuantity) {
+function saveNewQuantity(idProduct, newQuantity) {
     var carts = getProductsFromCarts();
     for (var i = 0; i < carts.length; i++) {
         if (carts[i].idProduct == idProduct) {
@@ -124,8 +124,14 @@ function totalAmountInCarts() {
 }
 
 //Tổng tiền của 1 SP trong giỏ hàng
-function totalAmountInCart(cart){
+function totalAmountInCart(cart) {
     var product = findProductfromLocalStorage(cart.idProduct);
     var totalAmount = product.afterSale * cart.quantityProduct;
     return totalAmount;
+}
+
+// Render lại trang Cart
+function renderCartPage() {
+    displayOnCarts();
+    displayBuyerInformation();
 }

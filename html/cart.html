@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="..//css/intercommunity.css">
+    <script src="../js/checkValidationForm.js"></script>
     <script src="../js/storage.js"></script>
     <script src="../js/product.js"></script>
     <script src="../js/display.js"></script>
@@ -83,58 +84,15 @@
             </div>
         </div>
         <!-- THÔNG TIN KHÁCH HÀNG  -->
-        <div class="buyerInformation">
-            <div class="container">
-                <div class="content">
-                    <h1 class="title">Mua hàng</h1>
-                    <div class="form">
-                        <div class="customerInfo">
-                            <label for="hoTen">Họ tên</label>
-                            <input type="text" class="hoTen" name="hoTen" id = "nameCustomer">
-                            <p id="nameCustomerError" class="error"></p>
-                        </div>
-                        <div class="customerInfo">
-                            <label for="phonenumber">Số điện thoại</label>
-                            <input type="number" class="hoTen" name="phonenumber" id="phoneCustomer">
-                            <p id="phoneCustomerError"></p>
-                        </div>
-                        <div class="customerInfo">
-                            <label for="email">Email</label>
-                            <input type="email" class="email" name="email" id="emailCustomer">
-                            <p id="emailCustomerError"></p>
-
-                        </div>
-                        <div class="customerInfo">
-                            <label for="birthday">Ngày sinh</label>
-                            <input type="date" class="birthday" name="birthday" id="birthdayCustomer">
-                        </div>
-                        <div class="customerInfo">
-                            <label for="recieveDateNote">Thời gian nhận hàng trong ngày 8-18h
-                            </label>
-                            <input type="number" min = 8 max = 18 class="recieveDateNote" name="recieveday" id="recieveDay">
-                        </div>
-                        <div class="order">
-                            <button class="btn btn-primary" onclick="saveOrderToLocalStorage()">Mua hàng</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="buyerInformation" id="buyerInformation">
         </div>
     </main>
 
     <script>
-        var nodeCarts = document.getElementById('carts');
-        var carts = getProductsFromCarts();
-        var nodeNameCustomer = document.getElementById('nameCustomer');
-        var nodePhoneCustomer = document.getElementById('phoneCustomer');
-        var nodeEmailCustomer = document.getElementById('emailCustomer');
-        var nodeBirthdayCustomer = document.getElementById('birthdayCustomer');
-        var nodeRecieveDay = document.getElementById('recieveDay');
-        displayOnCarts(carts);
         var nodeQuantityProduct = document.getElementById('quantityProduct');
-        var nodeNameCustomerError = document.getElementById('nameCustomerError');
-        var nodePhoneCustomerError = document.getElementById('phoneCustomerError');
-        var nodeEmailCustomerError = document.getElementById('emailCustomerError');
+        var nodeBuyerInformation = document.getElementById('buyerInformation');
+        var nodeCarts = document.getElementById('carts');
+        renderCartPage();
     </script>
 </body>
 

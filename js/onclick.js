@@ -53,10 +53,9 @@ function onClickDeleteInProducts(idProduct) {
 // Xóa SP khỏi Cart
 function onClickDeleteInCarts(idProduct){
     var products = getProductsFromCarts();
-    console.log(products);
     products = deleteProduct(products, idProduct);
     saveProductToCarts(products);
-    displayOnCarts(products);
+    renderCartPage();
 }
 
 function onClickCancel() {
@@ -76,4 +75,29 @@ function onClickAddToCart(idProduct) {
         winNotifyAddToCarts();
     });
     }
+
+function onClickCreateOrderInLocalStorage(){
+    var nodeNameCustomer = document.getElementById('nameCustomer');
+    var nameCustomer = nodeNameCustomer.value;
+    var nodePhoneCustomer = document.getElementById('phoneCustomer');
+    var phoneCustomer = nodePhoneCustomer.value;
+    var nodeEmailCustomer = document.getElementById('emailCustomer');
+    var emailCustomer = nodeEmailCustomer.value;
+    var nodeBirthdayCustomer = document.getElementById('birthdayCustomer');
+    var birthdayCustomer = nodeBirthdayCustomer.value;
+    var nodeRecieveDay = document.getElementById('recieveDay');
+    var recieveDay = nodeRecieveDay.value;
+    var totalAmounts = totalAmountInCarts();
+    var dateBuy = System.out.println(java.time.LocalDate.now());
+
+    console.log(dateBuy);
+
+    if(isValidOrderForm(nameCustomer, phoneCustomer, emailCustomer) == true){
+        var order = createOrder(nameCustomer, phoneCustomer, emailCustomer, birthdayCustomer, recieveDay, totalAmounts);
+        saveOrderToLocalStorage(order);
+        localStorage.removeItem('cart');
+        renderCartPage();
+    }
+}
+
 

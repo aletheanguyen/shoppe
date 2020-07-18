@@ -143,7 +143,8 @@ function displayOnPopUp(product) {
 }
 
 // Hiển thị thông tin danh sách SP trong Cart
-function displayOnCarts(carts) {
+function displayOnCarts() {
+    var carts = getProductsFromCarts();
     if (carts.length == 0 || carts == null) {
         nodeCarts.innerHTML =
             `<div class="notification">
@@ -163,14 +164,14 @@ function renderCartsHtml(carts) {
         var cartHtml = renderCartHtml(carts[i]);
         cartsHtml = cartHtml + cartsHtml;
     }
-    cartsHtml = cartsHtml+ totalAmountsHtml();
+    cartsHtml = cartsHtml + totalAmountsHtml();
     return cartsHtml;
 }
 // Tạo HTML Product Card - Hiển thị trong cart
 function renderCartHtml(cart) {
     var product = findProductfromLocalStorage(cart.idProduct);
     // var totalAmount = totalAmountInCart(cart);
-    var totalAmount = cart.quantityProduct*product.afterSale;
+    var totalAmount = cart.quantityProduct * product.afterSale;
     var cartHtml =
         `<div class="cart">
         <div class="detailInfor">
@@ -198,10 +199,10 @@ function renderCartHtml(cart) {
     return cartHtml;
 }
 
-function totalAmountsHtml(){
+function totalAmountsHtml() {
     var totalAmounts = Number(totalAmountInCarts()).toLocaleString('vi');
-    var totalAmountsHtml=
-    `<div class="cart">
+    var totalAmountsHtml =
+        `<div class="cart">
         <div class="detailInfor"></div>
         <div class="detailInfor"></div>
         <div class="detailInfor"></div>
@@ -214,4 +215,48 @@ function totalAmountsHtml(){
         <div class="detailInfor"></div>
         </div>`;
     return totalAmountsHtml;
+}
+
+function displayBuyerInformation() {
+    if (getProductsFromCarts().length == 0) {
+        nodeBuyerInformation.innerHTML =``;
     }
+    else {
+        nodeBuyerInformation.innerHTML =
+            `<div class="container">
+        <div class="content">
+        <h1 class="title">Mua hàng</h1>
+        <div class="form">
+            <div class="customerInfo">
+                <label for="hoTen">Họ tên</label>
+                <input type="text" name="hoTen" id="nameCustomer">
+                <p id="nameCustomerError" class="error">Tên người nhận không được bỏ trống</p>
+            </div>
+            <div class="customerInfo">
+                <label for="phonenumber">Số điện thoại</label>
+                <input type="number" name="phonenumber" id="phoneCustomer">
+                <p id="phoneCustomerError" class="error">SĐT người nhận không hợp lệ</p>
+            </div>
+            <div class="customerInfo">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="emailCustomer">
+                <p id="emailCustomerError" class="error" >Email người nhận không hợp lệ</p>
+            </div>
+            <div class="customerInfo">
+                <label for="birthday">Ngày sinh</label>
+                <input type="date" name="birthday" id="birthdayCustomer">
+            </div>
+            <div class="customerInfo">
+                <label for="recieveDate">Thời gian nhận hàng trong ngày 8-18h
+                </label>
+                <input type="number" min=8 max=18 name="recieveday" id="recieveDay">
+            </div>
+            <div class="order">
+                <button class="btn btn-primary" onclick="onClickCreateOrderInLocalStorage()">Mua hàng</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>`
+    }
+}
