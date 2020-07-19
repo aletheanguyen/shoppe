@@ -74,6 +74,6 @@ function isValidOrderForm(nameCustomer, phoneCustomer, emailCustomer) {
         nodeEmailCustomerError.style.display = 'block';
         isValid = false;
     }
-    else{nodeEmailCustomerError.style.display = 'block';}
+    else{nodeEmailCustomerError.style.display = 'none';}
     return isValid;
 }

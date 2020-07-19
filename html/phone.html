@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+    <link rel="stylesheet" href="/css/intercommunity.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="../js/notification.js"></script>
+    <script src="../js/product.js"></script>
+    <script src="../js/onclick.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/display.js"></script>
+    <script src="https://kit.fontawesome.com/42c8d04b98.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Thông báo  -->
+    <div class="win-notification" id="winNotifyAddToCart">
+    </div>
+    <!-- menu -->
+    <div class="nav-bar">
+        <div class="container">
+            <div class="content">
+                <ul class="menu-left-level-1">
+                    <li class="menu">
+                        <a href="/index.html" class="menu-level-1">Trang chủ</a>
+                    </li>
+                    <li class="menu">
+                        <a href="" class="menu-level-1">Quần áo</a>
+                        <ul class="menu-left-level-2">
+                            <li class="menu-level-2">
+                                <a href="">Quần áo nam</a>
+                            </li>
+                            <li class="menu-level-2">
+                                <a href="">Quần áo nữ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <a href="" class="menu-level-1">Phụ kiện</a>
+                    </li>
+                    <li class="menu">
+                        <a href="" class="menu-level-1">Đồ điện tử</a>
+                        <ul class="menu-left-level-2">
+                            <li class="menu-level-2">
+                                <a href="">Điện thoại</a>
+                            </li>
+                            <li class="menu-level-2">
+                                <a href="">Đồ gia dụng</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="menu-right-level-1">
+                    <li class="menu">
+                        <a href="/html/cart.html" class="fas fa-cart-arrow-down menu-level-1"></a>
+                    </li>
+                    <li class="menu">
+                        <a href="/html/addproduct.html" class="menu-level-1 fas fa-box-open"> <span>Kho hàng</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- DANH SÁCH SẢN PHẨM -->
+    <div class="products">
+        <div class="container">
+            <div class="content" id="products">
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Copyright by @AleEcommerce</p>
+</footer>
+
+<script>
+    if (getProductsFromStorage() == null || getProductsFromStorage().length == 0) {
+        var products = fakeProductInLocalStore();
+    }
+    else {
+        var products = getProductsFromStorage();
+    }
+    var nodeProducts = document.getElementById('products');
+    displayProducts(products);
+    var nodeWinNotification = document.getElementById('winNotifyAddToCart');
+</script>
+
+</body>
+</html>
